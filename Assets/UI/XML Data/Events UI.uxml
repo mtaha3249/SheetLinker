@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="FS Loading" src="project://database/Assets/UI/XML%20Data/FS%20Loading.uxml?fileID=9197481963319205126&amp;guid=9d68da087148d70458f2bc46187d21ca&amp;type=3#FS Loading" />
+    <Style src="project://database/Assets/UI/XML%20Data/Events%20UI.uss?fileID=7433441132597879392&amp;guid=75e9c70dc3269a849aa9ea765cb9cf38&amp;type=3#Events UI" />
+    <ui:VisualElement name="Panel" class="panel">
+        <ui:Label text="Events" display-tooltip-when-elided="true" name="Title" class="title" />
+        <ui:ScrollView horizontal-scroller-visibility="Hidden" vertical-scroller-visibility="AlwaysVisible" name="EventsItems" class="scrollView" />
+        <ui:Instance template="FS Loading" name="Loading" style="width: 100%; height: 90%; display: none;" />
+    </ui:VisualElement>
+</ui:UXML>

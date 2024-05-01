@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/XML%20Data/FS%20Loading.uss?fileID=7433441132597879392&amp;guid=ac266a84d5443d84cb17a950c437b6c3&amp;type=3#FS Loading" />
+    <ui:VisualElement name="BG" class="bg">
+        <LabelAutoFit text="Loading.." ratio="0.04" name="LoadingText" class="loading" style="font-size: 1000px;" />
+        <ui:ProgressBar title="0" name="LoadingProgress" low-value="37.17" class="progress" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,20 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="FS Loading" src="project://database/Assets/UI/XML%20Data/FS%20Loading.uxml?fileID=9197481963319205126&amp;guid=9d68da087148d70458f2bc46187d21ca&amp;type=3#FS Loading" />
+    <Style src="project://database/Assets/UI/XML%20Data/Event%20Item.uss?fileID=7433441132597879392&amp;guid=da5845bbc2b83cd4891abdd3848ed00c&amp;type=3#Event Item" />
+    <ui:VisualElement name="BG" class="bg">
+        <ui:VisualElement name="FG" class="fg">
+            <ui:Label text="The Last Town Hall 13 Challenge!" display-tooltip-when-elided="true" name="Title" class="title" />
+            <ui:Label text="Time Left: 0d 0h 0m 0s" display-tooltip-when-elided="true" name="TimeLeft" class="timeleft" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Body" class="body">
+            <ui:VisualElement name="Icon_Panel" class="icon_panel">
+                <ui:VisualElement name="Icon" class="icon" />
+                <ui:Instance template="FS Loading" name="Loading" style="width: 100%; height: 100%; display: none;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="DescriptionContainer" class="descriptionContainer">
+                <ui:Label text="The building and upgrade times remain unchanged, and the Builder Base does not receive this discount." display-tooltip-when-elided="true" name="Description" class="description" />
+                <ui:Button text="Coming Soon" display-tooltip-when-elided="true" name="Play" class="playButton" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
