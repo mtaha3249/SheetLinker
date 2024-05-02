@@ -3,18 +3,38 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+/// <summary>
+/// Event Item
+/// </summary>
 public class EventItem
 {
+    /// <summary>
+    /// Reference of UXML elements
+    /// </summary>
     private VisualElement _bg, _fg, _icon, _loadingVisual;
     private TextElement _title, _timeleft, _description;
     private Button _playButton;
 
+    /// <summary>
+    /// Reference of the main UXML item
+    /// </summary>
     public VisualElement _item;
+    /// <summary>
+    /// Data to show
+    /// </summary>
     private EventsData _data;
+    /// <summary>
+    /// Loading Item show on the image
+    /// </summary>
     private Loading _loading;
     private LoadingStatus _loadingStatus;
     private string _message = "Loading Image.";
 
+    /// <summary>
+    /// Constructor of the Event Item
+    /// </summary>
+    /// <param name="data">data to show</param>
+    /// <param name="itemUI">Asset to spawn for this item</param>
     public EventItem(EventsData data, VisualTreeAsset itemUI)
     {
         _data = data;
@@ -28,6 +48,9 @@ public class EventItem
         }
     }
 
+    /// <summary>
+    /// Fetch All UI elements from UXML
+    /// </summary>
     void FetchUIElements()
     {
         _bg = _item.Q<VisualElement>("BG");
@@ -43,6 +66,9 @@ public class EventItem
             _loading = new Loading(_loadingVisual);
     }
 
+    /// <summary>
+    /// Setup UI elements
+    /// </summary>
     void SetupUIElements()
     {
         _title.text = _data.EventTitle;
@@ -71,14 +97,28 @@ public class EventItem
         }
     }
 
+    /// <summary>
+    /// Fetch Icon Routine
+    /// </summary>
+    /// <returns></returns>
     public IEnumerator FetchIcon() => _data.FetchData(_data.IconUrl, OnProgress, OnCompleted);
-
+    
+    /// <summary>
+    /// Calls when image is downloading
+    /// </summary>
+    /// <param name="progress">Progress of downloaded 0 - 1</param>
+    /// <param name="message">Message to show</param>
     private void OnProgress(float progress, string message)
     {
         _loadingStatus = LoadingStatus.InProgress;
         _loading.UpdateLoading(progress, _message);
     }
 
+    /// <summary>
+    /// Calls when Downloading is done
+    /// </summary>
+    /// <param name="isDone">is completed or fail</param>
+    /// <param name="icon">downloaded item</param>
     private void OnCompleted(bool isDone, Sprite icon)
     {
         _loadingStatus = isDone ? LoadingStatus.Completed : LoadingStatus.Fail;
@@ -90,6 +130,9 @@ public class EventItem
         RefreshLoadingUI();
     }
 
+    /// <summary>
+    /// Refresh Loading UI base on the progress
+    /// </summary>
     void RefreshLoadingUI()
     {
         if (_loadingStatus == LoadingStatus.InProgress)
