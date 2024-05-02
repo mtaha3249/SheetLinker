@@ -8,7 +8,7 @@
         </ui:VisualElement>
         <ui:VisualElement name="Body" class="body">
             <ui:VisualElement name="Icon_Panel" class="icon_panel">
-                <ui:VisualElement name="Icon" class="icon" />
+                <ui:VisualElement name="Icon" class="icon" style="background-image: none;" />
                 <ui:Instance template="FS Loading" name="Loading" style="width: 100%; height: 100%; display: none;" />
             </ui:VisualElement>
             <ui:VisualElement name="DescriptionContainer" class="descriptionContainer">
